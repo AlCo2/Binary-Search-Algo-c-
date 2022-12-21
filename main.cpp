@@ -18,6 +18,22 @@ int binarysearch(int arr[],int start,int arrsize, int n){
     }
     cout << "not found it";
 }
+int binaryserchOtherIndex(int arr[],int left, int right, int x){
+    int result = -1;
+    int mid;
+    while(left<=right){
+        mid = (left+right)/2;
+        if(arr[mid]==x){
+            result = mid;
+            right = mid-1;
+        }else if(arr[mid]>x){
+            right = mid-1;
+        }else{
+            left = mid+1;
+        }
+    }
+    return result;
+}
 
 int main()
 {
